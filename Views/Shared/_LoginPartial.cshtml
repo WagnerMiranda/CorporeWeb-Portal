@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+    }
+}
+else
+{
+    <div class="text-right">
+        <button type="button" class="btn btn-link">@Html.ActionLink("Home", "Index", "Home", null, new { @style = "color:#ffffff;" })</button>
+        <button type="button" class="btn btn-link" style="color:white">@Html.ActionLink("Empresa", "Index", "Home", null, new { @style = "color:#ffffff;" })</button>
+        <button type="button" class="btn btn-link" style="color:white">@Html.ActionLink("Soluções", "Index", "Home", null, new { @style = "color:#ffffff;" })</button>
+        <button type="button" class="btn btn-link" style="color:white">@Html.ActionLink("Serviços", "Index", "Home", null, new { @style = "color:#ffffff;" })</button>
+        <button type="button" class="btn btn-link" style="color:white">@Html.ActionLink("Área restrita", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-link",  @style = "color:#ffffff;" })</button>
+    </div>
+
+}

@@ -1,0 +1,86 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Fundo do Topo da página */
+#header {
+    padding: 0 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 1em;
+    background-color: #096d9f;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+#headerNav {
+    text-align: right;
+}
+
+/*Imagen do CorporeWeb*/
+.LogoCorporeWeb{
+    background-image: url(../images/logo-corporeweb-146X36.png);
+    background-repeat: no-repeat;
+    background-position:left;
+}
+
+/* Rodapé da Página */
+footer {
+    width: 100%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12px;
+    background-color: #ffffff;
+    margin-top: -30px;
+    clear: both;
+    color: #121228;
+    border-bottom: 2px solid #121228;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+}
+
+/*.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}*/
+
+.panel-footer{
+    background-color: white;
+}
+
+/*input{
+    width: 100%;
+}*/
+
+/*.form-group {
+    margin-left: 5px;
+}*/

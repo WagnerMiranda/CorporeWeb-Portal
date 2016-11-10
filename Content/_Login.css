@@ -1,0 +1,6 @@
+﻿body.login {
+    background-color: #666666;
+    background: url("../images/login-background.jpg") no-repeat top center;
+    background-size:auto 700px;
+    color:#ffffff;
+}

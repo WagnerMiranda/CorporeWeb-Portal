@@ -1,0 +1,154 @@
+﻿@model CorporeWebPortal.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Registro de Cliente";
+}
+<style type="text/css">
+    #panelpos {
+        position: center;
+        left: 50%;
+        top: 50%;
+        margin-top: auto;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () { $("#cnpj").mask("99.999.999/9999-99"); });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () { $("#cep").mask("99999-999"); });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () { $("#fone").mask("(99) 99999-9999"); });
+</script>
+
+
+<div class="clearfix visible-md"></div>
+<div class="clearfix"></div>
+<div style="display:none"></div>
+    <div id="panelpos" class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>@Html.Label("Registro de Cliente", new { @class = "text-center" })</h4>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                    <div class="form-group" style="margin-left:15px;">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    @Html.LabelFor(m => m.cnpj)
+                                    @Html.TextBoxFor(m => m.cnpj, new { @class = "form-control" })
+                                </div>
+                                
+                                <div class="col-xs-10">
+                                    @Html.LabelFor(m => m.Nome)
+                                    @Html.TextBoxFor(m => m.Nome, new { @style = "min-width:97%;", @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    @Html.LabelFor(m => m.NomeFantasia)
+                                    @Html.TextBoxFor(m => m.NomeFantasia, new { @style = "min-width:97%;", @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-7">
+                                    @Html.LabelFor(m => m.Endereco)
+                                    @Html.TextBoxFor(m => m.Endereco, new { @style = "min-width:100%;", @class = "form-control" })
+                                </div>
+                                <div class="col-xs-1">
+                                    @Html.LabelFor(m => m.NumeroLog)
+                                    @Html.TextBoxFor(m => m.NumeroLog, new { @style = "min-width:2%;", @class = "form-control" })
+                                </div>
+                                <div class="col-xs-4">
+                                    @Html.LabelFor(m => m.EndCompl)
+                                    @Html.TextBoxFor(m => m.EndCompl, new { @style = "min-width:90%;", @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    @Html.LabelFor(m => m.Pais)
+                                    @Html.TextBoxFor(m => m.Pais, new { @style = "min-width:100%;", @class = "form-control" })
+                                </div>
+                                <div class="col-xs-3">
+                                    @Html.LabelFor(m => m.Estado)
+                                    @Html.TextBoxFor(m => m.Estado, new { @style = "min-width:100%;", @class = "form-control" })
+                                </div>
+                                <div class="col-xs-7">
+                                    @Html.LabelFor(m => m.Cidade)
+                                    @Html.TextBoxFor(m => m.Cidade, new { @style = "min-width:95%;", @class = "form-control" })
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    @Html.LabelFor(m => m.cep)
+                                    @Html.TextBoxFor(m => m.cep, new { @style = "min-width:10%;", @class = "form-control" })
+                                </div>
+                                <div class="col-xs-2">
+                                    @Html.LabelFor(m => m.fone)
+                                    @Html.TextBoxFor(m => m.fone, new { @style = "min-width:100%;", @class = "form-control" })
+                                </div>
+                                <div class="col-xs-1">
+                                    @Html.LabelFor(m => m.Ramal)
+                                    @Html.TextBoxFor(m => m.Ramal, new { @style = "min-width:100%;", @class = "form-control" })
+                                </div>
+
+                                <div class="col-xs-7">
+                                    @Html.LabelFor(m => m.Contato)
+                                    @Html.TextBoxFor(m => m.Contato, new { @style = "min-width:95%;", @class = "form-control" })
+                                </div>
+                            </div>
+                            <hr />
+
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    @Html.LabelFor(m => m.NomeCompl)
+                                    @Html.TextBoxFor(m => m.cep, new { @style = "min-width:100%;", @class = "form-control" })
+                                </div>
+                                <div class="col-xs-6">
+                                    @Html.LabelFor(m => m.Email)
+                                    @Html.TextBoxFor(m => m.Email, new { @style = "min-width:95%;", @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    @Html.LabelFor(m => m.Password)
+                                    @Html.PasswordFor(m => m.Password, new { @style = "min-width:100%;", @class = "form-control" })
+                                </div>
+                                <div class="col-xs-6">
+                                    @Html.LabelFor(m => m.ConfirmPassword)
+                                    @Html.PasswordFor(m => m.ConfirmPassword, new { @style = "min-width:95%;", @class = "form-control" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="panel-footer text-right">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success" style="min-width:10%"><i class="glyphicon glyphicon-ok"></i> Gravar</button>
+                        </div>
+                    </div>
+
+
+                }
+            </div>
+
+            @*<div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-success" value="Register" />
+                </div>
+            </div>*@
+
+
+        </div>
+    </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
